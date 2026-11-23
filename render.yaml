@@ -1,0 +1,32 @@
+# Blueprint: бесплатный веб-сервис для Клипов.
+# Автодеплой с GitHub сработает только если в аккаунте Render подключено приложение GitHub.
+services:
+  - type: web
+    name: clips-tg
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m backend.main
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.7"
+      - key: DEV_MODE
+        value: "0"
+      - key: SEED_DEMO
+        value: "1"
+      - key: RUN_BOT
+        value: "1"
+      - key: ADMIN_IDS
+        value: "643246726"
+      - key: APP_SHORT_NAME
+        value: "clips"
+      - key: BOT_USERNAME
+        value: "Districtt13bot"
+      - key: BOT_TOKEN
+        sync: false
+      - key: WEBAPP_URL
+        sync: false
+      - key: WEBHOOK_SECRET
+        sync: false
+      - key: DB_URL
+        value: sqlite+aiosqlite:///./clips.db

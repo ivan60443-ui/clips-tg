@@ -1,0 +1,11 @@
+{
+  "_comment": "Цены в Telegram Stars (XTR). Буст поднимает ролик в рекомендации на boost_hours часов.",
+  "boost_stars": 25,
+  "boost_hours": 24,
+  "gifts": [
+    {"id": "fire", "title": "Огонь", "emoji": "🔥", "stars": 15},
+    {"id": "heart", "title": "Сердце", "emoji": "❤️", "stars": 25},
+    {"id": "diamond", "title": "Алмаз", "emoji": "💎", "stars": 50},
+    {"id": "crown", "title": "Корона", "emoji": "👑", "stars": 100}
+  ]
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#0A0A0B" />
+  <title>Клипы</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-tab="for_you">Рекомендации</button>
+        <button class="tab" data-tab="following">Подписки</button>
+      </div>
+    </header>
+
+    <main id="feed" class="feed" aria-label="Лента"></main>
+
+    <div id="empty" class="empty hidden">
+      <div class="empty-icon">🎬</div>
+      <h2 id="empty-title">Пока тихо</h2>
+      <p id="empty-text">Пришли видео боту в личку — и оно появится здесь.</p>
+      <button class="btn primary" id="empty-upload">Загрузить ролик</button>
+    </div>
+
+    <nav class="dock">
+      <button class="dock-btn active" data-screen="feed" id="nav-feed">
+        <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M4 4h7v10H4V4zm9 0h7v6h-7V4zM4 16h7v4H4v-4zm9 2h7v2h-7v-2zm0-6h7v4h-7v-4z"/></svg>
+        <span>Лента</span>
+      </button>
+      <button class="dock-btn plus" data-screen="upload" id="nav-upload">
+        <span class="plus-circle">+</span>
+        <span>Загрузить</span>
+      </button>
+      <button class="dock-btn" data-screen="profile" id="nav-profile">
+        <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M12 12a4.5 4.5 0 1 0-4.5-4.5A4.5 4.5 0 0 0 12 12zm0 2c-4.4 0-8 2.2-8 5v1h16v-1c0-2.8-3.6-5-8-5z"/></svg>
+        <span>Профиль</span>
+      </button>
+    </nav>
+  </div>
+
+  <section id="sheet" class="sheet hidden" aria-hidden="true">
+    <div class="sheet-backdrop" id="sheet-backdrop"></div>
+    <div class="sheet-card" id="sheet-card">
+      <div class="sheet-handle"></div>
+      <div class="sheet-head">
+        <h3 id="sheet-title">Комментарии</h3>
+        <button class="icon-x" id="sheet-close" aria-label="Закрыть">✕</button>
+      </div>
+      <div class="sheet-body" id="sheet-body"></div>
+    </div>
+  </section>
+
+  <section id="page-upload" class="page hidden">
+    <div class="page-inner">
+      <div class="upload-mark">↑</div>
+      <h2>Выложи ролик</h2>
+      <p>Самый простой способ — прислать видео боту в личку. Подпись к ролику станет описанием в ленте.</p>
+      <ul class="hints">
+        <li>До 20 МБ и 90 секунд</li>
+        <li>Лучше вертикальное видео 9:16</li>
+        <li>Без водяных знаков и чужих клипов</li>
+      </ul>
+      <a class="btn primary" id="open-bot" href="#" target="_blank" rel="noopener">Открыть чат с ботом</a>
+    </div>
+  </section>
+
+  <section id="page-profile" class="page hidden">
+    <div class="page-inner profile-page" id="profile-root"></div>
+  </section>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
