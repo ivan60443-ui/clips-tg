@@ -99,6 +99,7 @@ async def setup_menu(bot: Bot):
             BotCommand(command="delete", description="Удалить ролик: /delete ID"),
         ]
     try:
+        await bot.set_my_commands(cmds)
         await bot.set_my_commands(cmds, scope=BotCommandScopeAllPrivateChats())
     except Exception as e:  # noqa
         log.warning("set_my_commands: %s", e)
